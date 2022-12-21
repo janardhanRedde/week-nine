@@ -1,0 +1,42 @@
+const express = require('express')
+const app = express()
+const port = 5045
+
+app.get("/todo",(req, res) => {
+  var obj = [
+    
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "delectus aut autem",
+      "completed": false,
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "quis ut nam facilis et officia qui",
+      "completed": false,
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "fugiat veniam minus",
+      "completed": false,
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "et porro tempora",
+      "completed": true,
+    },
+];
+res.send(obj);
+});
+app.get("/", (req, res) => {
+
+  res.send("welcome to the pitch");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
